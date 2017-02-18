@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="website">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Own Styles -->
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+   <section class="welcome">
+     <header class="header">
+       
+       <div class="container">
+          <nav class="navbar navbar-toggleable-md navbar-light navbar-fixed-top">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">VictoriaRS</a>
+
+            <div class="collapse navbar-collapse" id="mainMenu">
+              <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                <!-- Así sería para si el elemento es donde estas actualmente:  <li class="nav-item active"> -->
+                <li class="nav-item ">
+                  <a class="nav-link" href="#">Blogs</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Vídeos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Maquillajes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contacto</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+       </div>
+
+       <br>
+       
+       <div class="container" ng-controller="sliderCtrl">
+         <div class="row">
+           <!-- lg md sm xs (de mayor a menor) -->
+            <div class="col-lg-12"> 
+              <div class="slider">
+                <img ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage"
+                ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+                ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.image}}" height="100%" width="100%">
+
+                <a class="arrow prev" href="#" ng-click="nextSlide()"></a>
+                <a class="arrow next" href="#" ng-click="prevSlide()"></a>
+                <nav class="nav">
+                  <div class="wrapper">
+                    <ul class="dots">
+                      <li class="dot" ng-repeat="slide in slides">
+                        <a href="#" ng-class="{'active':isCurrentSlideIndex($index)}"
+                          ng-click="setCurrentSlideIndex($index);">{{slide.description}}</a></li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+
+     </header>
+  
+   </section>
+
+
+
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="js/jquery-slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- AngularJS -->
+    <script src="js/angularJS/angular.min.js"></script>
+    <script src="js/angularJS/angular-animate.min.js"></script>
+    <script src="js/angularJS/angular-touch.min.js"></script>
+    <!-- TweenMax -->
+    <script src="js/TweenMax.min.js"></script>
+    <!-- Own scripts -->
+    <script src="js/app.js"></script>
+  </body>
+  
+</html>
