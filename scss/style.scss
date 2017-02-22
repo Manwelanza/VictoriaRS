@@ -1,7 +1,7 @@
 /*Welcome styles*/
 
 .welcome {
-    height: 100vh;
+    height: 100px;
 }
 
 .header {
@@ -13,11 +13,20 @@
     font-size: 1.5rem;
 }
 
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link{
+    text-align: center;
+}
+
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
     color: rgba(60, 56, 241, 0.8);
     background-color: rgba(255, 255, 255, 0.2);
+    text-align: center;
 }
 
 #mainMenu {
-    clear:both;
+    clear: both;
+}
+
+.banner {
+    height: 20%;
 }
